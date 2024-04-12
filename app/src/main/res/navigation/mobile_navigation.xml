@@ -22,4 +22,9 @@
         android:name="com.example.bmicalculatorwithnav.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/bmi_calculator"
+        android:name="com.example.bmicalculatorwithnav.ui.bmicalculator.bmi_calculator"
+        android:label="BMICalculator"
+        tools:layout="@layout/fragment_bmi_calculator" />
 </navigation>
