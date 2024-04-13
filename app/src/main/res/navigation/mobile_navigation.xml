@@ -27,4 +27,9 @@
         android:name="com.example.bmicalculatorwithnav.ui.bmicalculator.bmi_calculator"
         android:label="BMICalculator"
         tools:layout="@layout/fragment_bmi_calculator" />
+    <fragment
+        android:id="@+id/nav_harris"
+        android:name="com.example.bmicalculatorwithnav.ui.harris.nav_harris"
+        android:label="@string/menu_harris"
+        tools:layout="@layout/fragment_nav_harris" />
 </navigation>

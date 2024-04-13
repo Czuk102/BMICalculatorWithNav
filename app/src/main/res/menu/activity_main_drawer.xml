@@ -9,16 +9,16 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_harris"
+            android:icon="@drawable/baseline_fastfood_24"
+            android:title="@string/bmr_calculator" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/baseline_format_list_bulleted_24"
             android:title="@string/menu_slideshow" />
         <item
             android:id="@+id/bmi_calculator"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:icon="@drawable/ic_menu_health"
+            android:title="@string/menu_bmi" />
     </group>
 </menu>

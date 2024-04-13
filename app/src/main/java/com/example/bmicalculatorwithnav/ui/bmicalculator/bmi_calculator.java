@@ -39,8 +39,15 @@ public class bmi_calculator extends Fragment {
         TextView result = view.findViewById(R.id.calculate_result);
         TextView label = view.findViewById(R.id.title);
         calculateBtn.setOnClickListener(v -> {
-            float height = Float.parseFloat(String.valueOf(heightField.getText())) / 100;
-            float weight = Float.parseFloat(String.valueOf(weightField.getText()));
+            String heightText = heightField.getText().toString();
+            String weightText = weightField.getText().toString();
+
+            if (heightText.isEmpty() || weightText.isEmpty()) {
+                return;
+            }
+
+            float height = Float.parseFloat(heightText) / 100;
+            float weight = Float.parseFloat(weightText);
             float bmi = calculateBMI(height, weight);
             label.setText(getBMILabel(bmi));
             result.setText(String.format("%.2f", bmi));
@@ -71,11 +78,6 @@ public class bmi_calculator extends Fragment {
         }
         return "";
     }
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(BmiCalculatorViewModel.class);
-        // TODO: Use the ViewModel
-    }
+
 
 }
