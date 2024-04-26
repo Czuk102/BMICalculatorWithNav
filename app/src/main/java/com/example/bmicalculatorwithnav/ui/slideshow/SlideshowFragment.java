@@ -35,7 +35,6 @@ public class SlideshowFragment extends Fragment { private List<Recipe> recipes =
         TextView recipeDescription2 = root.findViewById(R.id.recipe_description_2);
         ImageView recipeImage2 = root.findViewById(R.id.recipe_image_2);
 
-        // Ustawienie danych dla pierwszego przepisu
         recipeTitle1.setText("Delicious Pasta");
         recipeDescription1.setText("Ingredients:\n" +
                 "\n" +
@@ -75,8 +74,7 @@ public class SlideshowFragment extends Fragment { private List<Recipe> recipes =
                 "        Sprinkle with freshly grated parmesan cheese.\n" +
                 "        Serve immediately and enjoy the delicious taste of spaghetti bolognese!\n" +
                 "\n");
-        recipeImage1.setImageResource(R.drawable.baseline_fastfood_24); // Załóżmy, że masz zdefiniowaną drawable dla obrazu przepisu
-
+        recipeImage1.setImageResource(R.drawable.spaghetti_image);
         // Ustawienie danych dla drugiego przepisu
         recipeTitle2.setText("Tasty Pizza");
         recipeDescription2.setText("Ingredients:\n" +
@@ -116,7 +114,7 @@ public class SlideshowFragment extends Fragment { private List<Recipe> recipes =
                 "        Once the pizza is done baking, remove it from the oven and let it cool slightly.\n" +
                 "        Garnish with fresh basil leaves for extra flavor and freshness.\n" +
                 "        Slice the pizza into wedges and serve hot.");
-        recipeImage2.setImageResource(R.drawable.baseline_fastfood_24); // Załóżmy, że masz zdefiniowaną drawable dla obrazu przepisu
+        recipeImage2.setImageResource(R.drawable.pizza_image);
         return  root;
     }
 
