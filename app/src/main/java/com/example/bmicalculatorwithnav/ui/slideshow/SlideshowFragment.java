@@ -6,22 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-
 import com.example.bmicalculatorwithnav.R;
-import com.example.bmicalculatorwithnav.Recipe;
-import com.example.bmicalculatorwithnav.databinding.FragmentSlideshowBinding;
 
-import java.util.ArrayList;
-import java.util.List;
 
-public class SlideshowFragment extends Fragment { private List<Recipe> recipes = new ArrayList<>();
-    private TextView recipeTitleTextView;
-    private TextView recipeDescriptionTextView;
-    private ImageView recipeImageView;
+public class SlideshowFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
@@ -118,9 +108,4 @@ public class SlideshowFragment extends Fragment { private List<Recipe> recipes =
         return  root;
     }
 
-    private void displayRecipe(Recipe recipe) {
-        recipeTitleTextView.setText(recipe.getTitle());
-        recipeDescriptionTextView.setText(recipe.getDescription());
-        recipeImageView.setImageResource(recipe.getImageResourceId());
-    }
 }

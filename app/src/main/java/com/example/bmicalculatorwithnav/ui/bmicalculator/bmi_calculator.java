@@ -11,7 +11,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.bmicalculatorwithnav.R;
 
@@ -22,11 +21,6 @@ public class bmi_calculator extends Fragment {
     Map<Float,String> bmiLabels = new TreeMap<>();
 
 
-    private BmiCalculatorViewModel mViewModel;
-
-    public static bmi_calculator newInstance() {
-        return new bmi_calculator();
-    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,

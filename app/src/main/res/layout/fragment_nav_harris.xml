@@ -107,7 +107,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
-            android:text="Female" />
+            android:text="Female"
+            tools:ignore="OnClick" />
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

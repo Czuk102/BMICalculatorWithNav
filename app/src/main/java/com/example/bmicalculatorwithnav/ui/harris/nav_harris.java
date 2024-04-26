@@ -13,14 +13,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.bmicalculatorwithnav.R;
-import com.example.bmicalculatorwithnav.databinding.FragmentNavHarrisBinding;
 
 import java.text.DecimalFormat;
 
 
 public class nav_harris extends Fragment {
 
-    private FragmentNavHarrisBinding binding;
     private String genderValue = "";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -77,7 +75,6 @@ public class nav_harris extends Fragment {
         boolean checked = ((RadioButton) view).isChecked();
         String gender = "";
 
-        // Check which radio button was clicked
         if (view.getId() == R.id.Female) {
             if (checked) {
                 gender = "F";
@@ -88,9 +85,7 @@ public class nav_harris extends Fragment {
             }
         }
         genderValue = gender;
-
     }
-
 }
 
 
