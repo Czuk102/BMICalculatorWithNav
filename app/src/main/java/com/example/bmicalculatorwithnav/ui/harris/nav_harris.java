@@ -53,7 +53,7 @@ public class nav_harris extends Fragment {
         return view;
     }
 
-    private float calculateBMR(float weightValue, float heightValue, float ageValue, String genderValue) {
+     float calculateBMR(float weightValue, float heightValue, float ageValue, String genderValue) {
         if (genderValue.equals("")) {
             return 0;
         }

@@ -20,8 +20,6 @@ import java.util.TreeMap;
 public class bmi_calculator extends Fragment {
     Map<Float,String> bmiLabels = new TreeMap<>();
 
-
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -50,7 +48,7 @@ public class bmi_calculator extends Fragment {
         return view;
     }
 
-    private float calculateBMI (float height, float weight){
+    float calculateBMI (float height, float weight){
         return weight / (height * height);
     }
     private void initializeBMILabels() {
