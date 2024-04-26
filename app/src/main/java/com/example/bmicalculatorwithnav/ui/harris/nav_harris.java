@@ -1,12 +1,6 @@
 package com.example.bmicalculatorwithnav.ui.harris;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +8,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.example.bmicalculatorwithnav.R;
-import com.example.bmicalculatorwithnav.databinding.FragmentGalleryBinding;
 import com.example.bmicalculatorwithnav.databinding.FragmentNavHarrisBinding;
-import com.example.bmicalculatorwithnav.ui.bmicalculator.BmiCalculatorViewModel;
-import com.example.bmicalculatorwithnav.ui.gallery.GalleryViewModel;
 
-import java.util.Objects;
+import java.text.DecimalFormat;
 
 
 public class nav_harris extends Fragment {
@@ -40,7 +33,6 @@ public class nav_harris extends Fragment {
         femaleRadioButton.setOnClickListener(this::onRadioButtonClicked);
         maleRadioButton.setOnClickListener(this::onRadioButtonClicked);
 
-        TextView textView = view.findViewById(R.id.bmr_title);
         EditText weight = view.findViewById(R.id.weight_bmr);
         EditText height = view.findViewById(R.id.height_bmr);
         EditText age = view.findViewById(R.id.age_bmr);
@@ -56,13 +48,18 @@ public class nav_harris extends Fragment {
             float heightValue = Float.parseFloat(heightText);
             float ageValue = Float.parseFloat(ageText);
             float bmr = calculateBMR(weightValue, heightValue, ageValue,genderValue);
-            result.setText(String.format("%.2f", bmr));
+            DecimalFormat df = new DecimalFormat("#");
+            String resultText = df.format(bmr) + " kcal/day";
+            result.setText(resultText);
         });
         return view;
     }
 
-    private float calculateBMR(float weightValue, float heightValue, float ageValue, String genderValue){
-        if(genderValue.equals("F")) {
+    private float calculateBMR(float weightValue, float heightValue, float ageValue, String genderValue) {
+        if (genderValue.equals("")) {
+            return 0;
+        }
+        if (genderValue.equals("F")) {
             return 655.1f + (9.567f * weightValue) + (1.850f * heightValue) - (4.68f * ageValue);
         } else {
             return 66.47f + (13.75f * weightValue) + (5.003f * heightValue) - (6.75f * ageValue);
@@ -73,9 +70,8 @@ public class nav_harris extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        binding = null;
-    }
 
+    }
 
     public void onRadioButtonClicked(View view) {
         boolean checked = ((RadioButton) view).isChecked();
@@ -92,7 +88,6 @@ public class nav_harris extends Fragment {
             }
         }
         genderValue = gender;
-
 
     }
 
